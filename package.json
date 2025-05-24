@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://Kushagravyas.github.io/Calendar_app",
+  "homepage": "https://Kushagravyas.github.io/EventIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

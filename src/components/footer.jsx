@@ -8,7 +8,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Calendar className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">CalendarApp</span>
+              <span className="text-xl font-bold">EventIT</span>
             </div>
             <p className="text-muted-foreground">
               A modern calendar application designed to help you manage your events and schedule efficiently.
@@ -53,7 +53,7 @@ export function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-          <p>&copy; 2024 CalendarApp. All rights reserved. Built with React and Next.js.</p>
+          <p>&copy; 2024 EventIT. All rights reserved. Built with React and Next.js.</p>
         </div>
       </div>
     </footer>

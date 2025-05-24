@@ -54,7 +54,7 @@ export function AboutSection() {
     <div className="space-y-12">
       <div className="text-center space-y-6">
         <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-          About CalendarApp
+          About EventIT
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           A modern, user-friendly calendar application designed to help you manage your events and schedule efficiently
@@ -86,7 +86,7 @@ export function AboutSection() {
           <p>
             Built using modern web technologies including React, Vite, and Tailwind CSS, our application offers a
             smooth, responsive experience across all devices. Whether you're planning your day, week, or month,
-            CalendarApp makes it easy to stay organized and on top of your commitments.
+            EventIT makes it easy to stay organized and on top of your commitments.
           </p>
           <p>
             Our commitment to user experience drives every feature we develop. From intuitive event creation to

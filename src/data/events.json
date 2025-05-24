@@ -1,0 +1,328 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Team Standup",
+      "date": "2025-05-55",
+      "time": "09:00",
+      "duration": 30,
+      "description": "Daily team standup meeting to discuss progress and blockers",
+      "color": "bg-blue-500",
+      "category": "work",
+      "priority": "high",
+      "location": "Conference Room A",
+      "attendees": ["John Doe", "Jane Smith", "Mike Johnson"]
+    },
+    {
+      "id": 2,
+      "title": "Project Review",
+      "date": "2025-05-19",
+      "time": "14:00",
+      "duration": 90,
+      "description": "Quarterly project review with stakeholders and management",
+      "color": "bg-green-500",
+      "category": "work",
+      "priority": "high",
+      "location": "Main Conference Room",
+      "attendees": ["Sarah Wilson", "David Brown", "Lisa Chen"]
+    },
+    {
+      "id": 3,
+      "title": "Lunch with Client",
+      "date": "2025-05-27",
+      "time": "12:30",
+      "duration": 90,
+      "description": "Business lunch meeting with potential new client",
+      "color": "bg-orange-500",
+      "category": "business",
+      "priority": "medium",
+      "location": "Downtown Restaurant",
+      "attendees": ["Alex Thompson", "Maria Garcia"]
+    },
+    {
+      "id": 4,
+      "title": "Gym Workout",
+      "date": "2025-06-01",
+      "time": "18:00",
+      "duration": 60,
+      "description": "Evening workout session - cardio and strength training",
+      "color": "bg-red-500",
+      "category": "personal",
+      "priority": "low",
+      "location": "Fitness Center",
+      "attendees": []
+    },
+    {
+      "id": 5,
+      "title": "Code Review Session",
+      "date": "2025-06-13",
+      "time": "10:00",
+      "duration": 120,
+      "description": "Weekly code review session for the new feature implementation",
+      "color": "bg-purple-500",
+      "category": "work",
+      "priority": "high",
+      "location": "Development Lab",
+      "attendees": ["Tom Wilson", "Emma Davis", "Chris Lee"]
+    },
+    {
+      "id": 6,
+      "title": "Doctor Appointment",
+      "date": "2025-06-17",
+      "time": "15:30",
+      "duration": 45,
+      "description": "Annual health checkup with Dr. Smith",
+      "color": "bg-pink-500",
+      "category": "personal",
+      "priority": "medium",
+      "location": "Medical Center",
+      "attendees": []
+    },
+    {
+      "id": 7,
+      "title": "Team Building Event",
+      "date": "2025-06-23",
+      "time": "16:00",
+      "duration": 180,
+      "description": "Monthly team building activities and dinner",
+      "color": "bg-indigo-500",
+      "category": "social",
+      "priority": "medium",
+      "location": "Recreation Center",
+      "attendees": ["All Team Members"]
+    },
+    {
+      "id": 8,
+      "title": "Weekend Hiking",
+      "date": "2025-07-08",
+      "time": "08:00",
+      "duration": 300,
+      "description": "Weekend hiking trip to the mountains with friends",
+      "color": "bg-green-600",
+      "category": "personal",
+      "priority": "low",
+      "location": "Mountain Trail",
+      "attendees": ["Friends Group"]
+    },
+    {
+      "id": 9,
+      "title": "Client Presentation",
+      "date": "2025-07-12",
+      "time": "11:00",
+      "duration": 60,
+      "description": "Final presentation of the project proposal to the client",
+      "color": "bg-yellow-500",
+      "category": "work",
+      "priority": "high",
+      "location": "Client Office",
+      "attendees": ["Project Team", "Client Representatives"]
+    },
+    {
+      "id": 10,
+      "title": "Birthday Party",
+      "date": "2025-07-11",
+      "time": "19:00",
+      "duration": 240,
+      "description": "Sarah's birthday celebration at her place",
+      "color": "bg-pink-400",
+      "category": "social",
+      "priority": "medium",
+      "location": "Sarah's House",
+      "attendees": ["Close Friends", "Family"]
+    },
+    {
+      "id": 11,
+      "title": "Sprint Planning",
+      "date": "2025-07-24",
+      "time": "09:30",
+      "duration": 120,
+      "description": "Planning session for the next development sprint",
+      "color": "bg-blue-600",
+      "category": "work",
+      "priority": "high",
+      "location": "Planning Room",
+      "attendees": ["Development Team", "Product Owner", "Scrum Master"]
+    },
+    {
+      "id": 12,
+      "title": "Grocery Shopping",
+      "date": "2025-05-24",
+      "time": "17:00",
+      "duration": 60,
+      "description": "Weekly grocery shopping for household items",
+      "color": "bg-gray-500",
+      "category": "personal",
+      "priority": "low",
+      "location": "Supermarket",
+      "attendees": []
+    },
+    {
+      "id": 13,
+      "title": "Online Course",
+      "date": "2025-05-25",
+      "time": "20:00",
+      "duration": 90,
+      "description": "Advanced React development course - Module 5",
+      "color": "bg-teal-500",
+      "category": "education",
+      "priority": "medium",
+      "location": "Home Office",
+      "attendees": []
+    },
+    {
+      "id": 14,
+      "title": "Coffee with Mentor",
+      "date": "2025-06-26",
+      "time": "10:30",
+      "duration": 60,
+      "description": "Monthly mentorship meeting to discuss career goals",
+      "color": "bg-amber-500",
+      "category": "professional",
+      "priority": "medium",
+      "location": "Coffee Shop",
+      "attendees": ["Mentor"]
+    },
+    {
+      "id": 15,
+      "title": "Family Dinner",
+      "date": "2025-08-27",
+      "time": "18:30",
+      "duration": 120,
+      "description": "Weekly family dinner at parents' house",
+      "color": "bg-rose-500",
+      "category": "family",
+      "priority": "high",
+      "location": "Parents' House",
+      "attendees": ["Family Members"]
+    },
+    {
+      "id": 16,
+      "title": "Morning Yoga",
+      "date": "2025-09-02",
+      "time": "07:00",
+      "duration": 60,
+      "description": "Sunday morning yoga session for relaxation and mindfulness",
+      "color": "bg-emerald-500",
+      "category": "personal",
+      "priority": "low",
+      "location": "Yoga Studio",
+      "attendees": []
+    },
+    {
+      "id": 17,
+      "title": "Book Club Meeting",
+      "date": "2025-09-09",
+      "time": "19:30",
+      "duration": 90,
+      "description": "Monthly book club discussion - 'The Psychology of Programming'",
+      "color": "bg-violet-500",
+      "category": "social",
+      "priority": "low",
+      "location": "Library",
+      "attendees": ["Book Club Members"]
+    },
+    {
+      "id": 18,
+      "title": "Quarterly Review",
+      "date": "2025-05-30",
+      "time": "13:00",
+      "duration": 60,
+      "description": "Quarterly performance review with manager",
+      "color": "bg-cyan-500",
+      "category": "work",
+      "priority": "high",
+      "location": "Manager's Office",
+      "attendees": ["Manager"]
+    },
+    {
+      "id": 19,
+      "title": "Dentist Appointment",
+      "date": "2025-06-31",
+      "time": "14:00",
+      "duration": 45,
+      "description": "Routine dental cleaning and checkup",
+      "color": "bg-lime-500",
+      "category": "personal",
+      "priority": "medium",
+      "location": "Dental Clinic",
+      "attendees": []
+    },
+    {
+      "id": 20,
+      "title": "Movie Night",
+      "date": "2025-10-01",
+      "time": "20:00",
+      "duration": 150,
+      "description": "Movie night with friends - watching the latest sci-fi thriller",
+      "color": "bg-fuchsia-500",
+      "category": "social",
+      "priority": "low",
+      "location": "Home Theater",
+      "attendees": ["Close Friends"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "work",
+      "name": "Work",
+      "color": "bg-blue-500",
+      "description": "Work-related events and meetings"
+    },
+    {
+      "id": "personal",
+      "name": "Personal",
+      "color": "bg-green-500",
+      "description": "Personal activities and appointments"
+    },
+    {
+      "id": "social",
+      "name": "Social",
+      "color": "bg-purple-500",
+      "description": "Social events and gatherings"
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "color": "bg-orange-500",
+      "description": "Business meetings and networking"
+    },
+    {
+      "id": "education",
+      "name": "Education",
+      "color": "bg-teal-500",
+      "description": "Learning and educational activities"
+    },
+    {
+      "id": "professional",
+      "name": "Professional",
+      "color": "bg-amber-500",
+      "description": "Professional development activities"
+    },
+    {
+      "id": "family",
+      "name": "Family",
+      "color": "bg-rose-500",
+      "description": "Family events and gatherings"
+    }
+  ],
+  "priorities": [
+    {
+      "id": "high",
+      "name": "High Priority",
+      "color": "bg-red-500",
+      "description": "Critical events that cannot be missed"
+    },
+    {
+      "id": "medium",
+      "name": "Medium Priority",
+      "color": "bg-yellow-500",
+      "description": "Important events with some flexibility"
+    },
+    {
+      "id": "low",
+      "name": "Low Priority",
+      "color": "bg-gray-500",
+      "description": "Optional events that can be rescheduled"
+    }
+  ]
+}

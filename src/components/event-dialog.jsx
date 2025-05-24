@@ -8,7 +8,7 @@ import { Label } from "./ui/label"
 import { Textarea } from "./ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
 import { useTheme } from "./theme-provider"
-import { Calendar, Clock, Palette, FileText } from "lucide-react"
+import { Calendar, Clock, Palette, FileText, MapPin, Users, Tag, AlertCircle } from "lucide-react"
 
 const colorOptions = [
   { value: "bg-blue-500", label: "Ocean Blue", preview: "bg-blue-500" },
@@ -19,9 +19,11 @@ const colorOptions = [
   { value: "bg-pink-500", label: "Rose Pink", preview: "bg-pink-500" },
   { value: "bg-indigo-500", label: "Deep Indigo", preview: "bg-indigo-500" },
   { value: "bg-teal-500", label: "Teal", preview: "bg-teal-500" },
+  { value: "bg-yellow-500", label: "Golden Yellow", preview: "bg-yellow-500" },
+  { value: "bg-cyan-500", label: "Cyan", preview: "bg-cyan-500" },
 ]
 
-export function EventDialog({ open, onOpenChange, onAddEvent }) {
+export function EventDialog({ open, onOpenChange, onAddEvent, categories = [], priorities = [] }) {
   const [formData, setFormData] = useState({
     title: "",
     date: "",
@@ -29,6 +31,10 @@ export function EventDialog({ open, onOpenChange, onAddEvent }) {
     duration: 60,
     description: "",
     color: "bg-blue-500",
+    category: "personal",
+    priority: "medium",
+    location: "",
+    attendees: "",
   })
   const [errors, setErrors] = useState({})
   const { theme } = useTheme()
@@ -60,7 +66,16 @@ export function EventDialog({ open, onOpenChange, onAddEvent }) {
     e.preventDefault()
 
     if (validateForm()) {
-      onAddEvent(formData)
+      const eventData = {
+        ...formData,
+        attendees: formData.attendees
+          ? formData.attendees
+              .split(",")
+              .map((a) => a.trim())
+              .filter((a) => a)
+          : [],
+      }
+      onAddEvent(eventData)
       setFormData({
         title: "",
         date: "",
@@ -68,6 +83,10 @@ export function EventDialog({ open, onOpenChange, onAddEvent }) {
         duration: 60,
         description: "",
         color: "bg-blue-500",
+        category: "personal",
+        priority: "medium",
+        location: "",
+        attendees: "",
       })
       setErrors({})
       onOpenChange(false)
@@ -84,7 +103,7 @@ export function EventDialog({ open, onOpenChange, onAddEvent }) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className={`sm:max-w-[500px] bg-gradient-to-br ${theme.eventModal} text-white border-0 shadow-2xl`}
+        className={`sm:max-w-[600px] bg-gradient-to-br ${theme.eventModal} text-white border-0 shadow-2xl max-h-[90vh] overflow-y-auto`}
       >
         <DialogHeader className="text-center pb-4">
           <DialogTitle className="text-2xl font-bold flex items-center justify-center space-x-2">
@@ -92,11 +111,12 @@ export function EventDialog({ open, onOpenChange, onAddEvent }) {
             <span>Create New Event</span>
           </DialogTitle>
           <DialogDescription className="text-white/80 text-base">
-            Add a new event to your calendar with all the details
+            Add a new event to your calendar with detailed information
           </DialogDescription>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Title */}
           <div className="space-y-2">
             <Label htmlFor="title" className="text-white font-semibold flex items-center space-x-2">
               <FileText className="h-4 w-4" />
@@ -112,6 +132,7 @@ export function EventDialog({ open, onOpenChange, onAddEvent }) {
             {errors.title && <p className="text-red-200 text-sm">{errors.title}</p>}
           </div>
 
+          {/* Date and Time */}
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="date" className="text-white font-semibold flex items-center space-x-2">
@@ -143,6 +164,7 @@ export function EventDialog({ open, onOpenChange, onAddEvent }) {
             </div>
           </div>
 
+          {/* Duration */}
           <div className="space-y-2">
             <Label htmlFor="duration" className="text-white font-semibold">
               Duration (minutes)
@@ -159,6 +181,84 @@ export function EventDialog({ open, onOpenChange, onAddEvent }) {
             {errors.duration && <p className="text-red-200 text-sm">{errors.duration}</p>}
           </div>
 
+          {/* Category and Priority */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="category" className="text-white font-semibold flex items-center space-x-2">
+                <Tag className="h-4 w-4" />
+                <span>Category</span>
+              </Label>
+              <Select value={formData.category} onValueChange={(value) => handleInputChange("category", value)}>
+                <SelectTrigger className="bg-white/10 border-white/20 text-white focus:bg-white/20">
+                  <SelectValue placeholder="Select category" />
+                </SelectTrigger>
+                <SelectContent className="bg-gray-800 border-gray-600">
+                  {categories.map((category) => (
+                    <SelectItem key={category.id} value={category.id} className="text-white hover:bg-gray-700">
+                      <div className="flex items-center space-x-3">
+                        <div className={`w-4 h-4 rounded-full ${category.color}`} />
+                        <span>{category.name}</span>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="priority" className="text-white font-semibold flex items-center space-x-2">
+                <AlertCircle className="h-4 w-4" />
+                <span>Priority</span>
+              </Label>
+              <Select value={formData.priority} onValueChange={(value) => handleInputChange("priority", value)}>
+                <SelectTrigger className="bg-white/10 border-white/20 text-white focus:bg-white/20">
+                  <SelectValue placeholder="Select priority" />
+                </SelectTrigger>
+                <SelectContent className="bg-gray-800 border-gray-600">
+                  {priorities.map((priority) => (
+                    <SelectItem key={priority.id} value={priority.id} className="text-white hover:bg-gray-700">
+                      <div className="flex items-center space-x-3">
+                        <div className={`w-4 h-4 rounded-full ${priority.color}`} />
+                        <span>{priority.name}</span>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          {/* Location */}
+          <div className="space-y-2">
+            <Label htmlFor="location" className="text-white font-semibold flex items-center space-x-2">
+              <MapPin className="h-4 w-4" />
+              <span>Location</span>
+            </Label>
+            <Input
+              id="location"
+              value={formData.location}
+              onChange={(e) => handleInputChange("location", e.target.value)}
+              placeholder="Enter event location (optional)"
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:bg-white/20 transition-all duration-300"
+            />
+          </div>
+
+          {/* Attendees */}
+          <div className="space-y-2">
+            <Label htmlFor="attendees" className="text-white font-semibold flex items-center space-x-2">
+              <Users className="h-4 w-4" />
+              <span>Attendees</span>
+            </Label>
+            <Input
+              id="attendees"
+              value={formData.attendees}
+              onChange={(e) => handleInputChange("attendees", e.target.value)}
+              placeholder="Enter attendees separated by commas (optional)"
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:bg-white/20 transition-all duration-300"
+            />
+          </div>
+
+          {/* Color */}
           <div className="space-y-2">
             <Label htmlFor="color" className="text-white font-semibold flex items-center space-x-2">
               <Palette className="h-4 w-4" />
@@ -181,6 +281,7 @@ export function EventDialog({ open, onOpenChange, onAddEvent }) {
             </Select>
           </div>
 
+          {/* Description */}
           <div className="space-y-2">
             <Label htmlFor="description" className="text-white font-semibold">
               Description

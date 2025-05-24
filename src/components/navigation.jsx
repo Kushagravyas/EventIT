@@ -33,7 +33,7 @@ export function Navigation({ activeSection = "calendar", onSectionChange }) {
               <Calendar className="h-6 w-6 text-white" />
             </div>
             <span className={`text-xl font-bold bg-gradient-to-r ${theme.primary} bg-clip-text text-transparent`}>
-              CalendarApp
+              EventIT
             </span>
           </div>
 
